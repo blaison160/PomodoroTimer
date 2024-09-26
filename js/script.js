@@ -3,7 +3,7 @@ let workTittle = document.getElementById('workTitle')
 let breakTittle = document.getElementById('breakTitle')
 let workTime = 25*60;
 //test default time
-workTime = 30;
+//workTime = 30;
 let pauseTime = 5*60;
 
 let pause=false;

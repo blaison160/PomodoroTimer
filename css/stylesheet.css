@@ -16,6 +16,15 @@
     background-color: darkred;
 }
 
+p,
+h1 {
+  color: #fffce9;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
 header {
     width: 100%;
     padding: 10px;
@@ -86,7 +95,7 @@ header {
   }
   
   .controls button {
-    border: 5px solid white;
+    border: 5px solid #fffce9;
     background-color: transparent;
     cursor: pointer;
   }
@@ -99,7 +108,7 @@ header {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    color: var(--color-font);
+    color: #fffce9;
     padding: 10px;
     font-size: 3rem;
   }
