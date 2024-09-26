@@ -1,29 +1,46 @@
-// Javascript code written by robbmj, edited by jlo
-// at https://stackoverflow.com/questions/20618355/how-to-write-a-countdown-timer-in-javascript
-//
-// function startTimer(duration, display) {
-//     var timer = duration, minutes, seconds;
-//     setInterval(function () {
-//         minutes = parseInt(timer / 60, 10);
-//         seconds = parseInt(timer % 60, 10);
-// 
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
-// 
-//         display.textContent = minutes + ":" + seconds;
-// 
-//         if (--timer < 0) {
-//             timer = duration;
-//         }
-//     }, 1000);
-// }
-// 
-// window.onload = function () {
-//     var fiveMinutes = 60 * 5,
-//         display = document.querySelector('#time');
-//     startTimer(fiveMinutes, display);
-// };
-// -HTML part-
-// <body>
-//     <div>Registration closes in <span id="time">05:00</span> minutes!</div>
-// </body>
+let display = document.querySelector('#timerDisplay');
+let workTime = 25*60;
+let cooldownTime = 5*60;
+
+
+
+function setTimerDisplay(time){
+    minutes = parseInt(time / 60, 10);
+    seconds = parseInt(time % 60, 10);
+    if(minutes<10){
+        minutes = "0"+minutes;
+    }
+    if(seconds<10){
+        seconds = "0"+seconds;
+    }
+    display.textContent = minutes + ":" + seconds;
+}
+
+function startTimer(duration) {
+    let timer = duration-1;
+    setTimerDisplay(timer);
+    const interval = setInterval(function () {
+        setTimerDisplay(timer);
+        
+        if (timer === 0) {
+            clearInterval(interval);
+            display.textContent = "Time's up!";
+        } else {
+            timer--;
+        }
+    }, 1000);
+}
+
+
+
+
+
+
+
+
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5;
+    setTimerDisplay(fiveMinutes);
+    startTimer(fiveMinutes);
+};
