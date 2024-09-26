@@ -1,6 +1,8 @@
 let display = document.querySelector('#timerDisplay');
 let workTime = 25*60;
-let cooldownTime = 5*60;
+let pauseTime = 5*60;
+
+let pause=false;
 
 
 
@@ -16,7 +18,14 @@ function setTimerDisplay(time){
     display.textContent = minutes + ":" + seconds;
 }
 
-function startTimer(duration) {
+function startTimer() {
+    if(pause){
+        duration = pauseTime;
+    }else{
+        duration = workTime;
+    }
+    document.getElementById("start").style.display = "none";
+    document.getElementById("reset").style.display = "block";
     let timer = duration-1;
     setTimerDisplay(timer);
     const interval = setInterval(function () {
@@ -24,7 +33,12 @@ function startTimer(duration) {
         
         if (timer === 0) {
             clearInterval(interval);
-            display.textContent = "Time's up!";
+            if(pause){
+                reset();
+            }else{
+                pause = true;
+                startTimer();
+            }
         } else {
             timer--;
         }
@@ -40,7 +54,12 @@ function startTimer(duration) {
 
 
 window.onload = function () {
-    var fiveMinutes = 60 * 5;
-    setTimerDisplay(fiveMinutes);
-    startTimer(fiveMinutes);
+    setTimerDisplay(workTime);
+    document.getElementById("reset").style.display = "none";
+    document.getElementById("start").style.display = "block";
 };
+
+
+function reset(){
+    location.reload();
+}

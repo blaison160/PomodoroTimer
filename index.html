@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="css" href="./css/stylesheet.css">
-
+    <script src="https://kit.fontawesome.com/d0caf46f42.js" crossorigin="anonymous"></script>
+    
     <script defer src="./js/script.js"></script>
     <title>Pomodoro Timer</title>
   </head>
   <body>
-    <main>
-      <div class = "title">
+    <div class="container">
+      <header>
         <h1>Pomodoro Timer</h1>
-      </div>
-      <div class = "timer">
-        <span id = "timerDisplay"></span>
-      </div>
-    </main>
+      </header>
+      <section class = "timer">
+        <div class="circle">
+          <div class="time">
+            <p id = "timerDisplay"></p>
+          </div>
+        </div>
+      </section>
+      <section class="controls">
+        <button id="start" aria-label="start button" onclick="startTimer()"><em class="fa-play fa-solid fa-2x" aria-hidden="true"></em></button>
+        <button id="reset" aria-label="reset button" onclick="reset()"><em class="fa-arrow-rotate-left fa-solid fa-2x" aria-hidden="true"></em></button>
+      </section>
+    </div>
   </body>
 </html>
