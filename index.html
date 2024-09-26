@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="css" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
     <script src="https://kit.fontawesome.com/d0caf46f42.js" crossorigin="anonymous"></script>
     
     <script defer src="./js/script.js"></script>
@@ -14,6 +14,10 @@
       <header>
         <h1>Pomodoro Timer</h1>
       </header>
+      <section class="panel">
+        <p id="workTitle" class="active">Work</p>
+        <p id="breakTitle">Break</p>
+      </section>
       <section class = "timer">
         <div class="circle">
           <div class="time">
@@ -22,9 +26,10 @@
         </div>
       </section>
       <section class="controls">
-        <button id="start" aria-label="start button" onclick="startTimer()"><em class="fa-play fa-solid fa-2x" aria-hidden="true"></em></button>
-        <button id="reset" aria-label="reset button" onclick="reset()"><em class="fa-arrow-rotate-left fa-solid fa-2x" aria-hidden="true"></em></button>
+        <button id="start" aria-label="start button" onclick="startTimer()"><em class="fa-play fa-solid" aria-hidden="true"></em></button>
+        <button id="reset" aria-label="reset button" onclick="reset()"><em class="fa-arrow-rotate-left fa-solid" aria-hidden="true"></em></button>
       </section>
     </div>
+    <footer>JavaScript Exercise</footer>
   </body>
 </html>

@@ -1,5 +1,9 @@
 let display = document.querySelector('#timerDisplay');
+let workTittle = document.getElementById('workTitle')
+let breakTittle = document.getElementById('breakTitle')
 let workTime = 25*60;
+//test default time
+workTime = 30;
 let pauseTime = 5*60;
 
 let pause=false;
@@ -19,14 +23,15 @@ function setTimerDisplay(time){
 }
 
 function startTimer() {
+    let timer;
     if(pause){
-        duration = pauseTime;
+        timer = pauseTime;
     }else{
-        duration = workTime;
+        timer = workTime;
     }
     document.getElementById("start").style.display = "none";
     document.getElementById("reset").style.display = "block";
-    let timer = duration-1;
+    timer---1;
     setTimerDisplay(timer);
     const interval = setInterval(function () {
         setTimerDisplay(timer);
@@ -37,6 +42,8 @@ function startTimer() {
                 reset();
             }else{
                 pause = true;
+                workTitle.classList.remove('active');
+                breakTitle.classList.add('active');
                 startTimer();
             }
         } else {
@@ -55,8 +62,6 @@ function startTimer() {
 
 window.onload = function () {
     setTimerDisplay(workTime);
-    document.getElementById("reset").style.display = "none";
-    document.getElementById("start").style.display = "block";
 };
 
 
