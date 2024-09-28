@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d0caf46f42.js" crossorigin="anonymous"></script>
-    
     <script defer src="./js/script.js"></script>
     <title>Pomodoro Timer</title>
   </head>
@@ -26,10 +26,27 @@
         </div>
       </section>
       <section class="controls">
-        <button id="start" aria-label="start button" onclick="startTimer()"><em class="fa-play fa-solid" aria-hidden="true"></em></button>
-        <button id="reset" aria-label="reset button" onclick="reset()"><em class="fa-arrow-rotate-left fa-solid" aria-hidden="true"></em></button>
+        <button id="settingsButton" aria-label="settings button" onclick="openSettings()"><em class="fa-gear fa-solid" aria-hidden="true"></em></button>
+        <button id="startButton" aria-label="start button" onclick="startTimer()"><em class="fa-play fa-solid" aria-hidden="true"></em></button>
+        <button id="resetButton" aria-label="reset button" onclick="reset()"><em class="fa-arrow-rotate-left fa-solid" aria-hidden="true"></em></button>
       </section>
+      <section id="settings">
+        <div class="settingsTitle">
+          <h2>Timer Settings</h2>
+        </div>
+        <div class="divForm">
+          <form id="settingsForm" onsubmit="saveSettings(event)">
+            <label for="workTimeInput">Work time (minutes):</label>
+            <input type="number" id="workTimeInput" value="25" min="1" required="true">
+            <label for="breakTimeInput">Break time (minutes):</label>
+            <input type="number" id="breakTimeInput" value="5" min="1" required="true">
+            <button type="submit" id="submitButton" aria-label="submit button"><em class="fa-check fa-solid" aria-hidden="true"></em></button>
+            <button type="button" id="cancelButton" aria-label="cancel button" onclick="closeSettings()"><em class="fa-times fa-solid" aria-hidden="true"></em></button>
+          </form>
+        </form>        
+    </section>
     </div>
+
     <footer>JavaScript Exercise</footer>
   </body>
 </html>
