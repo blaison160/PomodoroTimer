@@ -37,13 +37,13 @@
         <div class="divForm">
           <form id="settingsForm" onsubmit="saveSettings(event)">
             <label for="workTimeInput">Work time (minutes):</label>
-            <input type="number" id="workTimeInput" value="25" min="1" required="true">
+            <input type="number" id="workTimeInput" value="25" min="1" aria-required="true" required>
             <label for="breakTimeInput">Break time (minutes):</label>
-            <input type="number" id="breakTimeInput" value="5" min="1" required="true">
+            <input type="number" id="breakTimeInput" value="5" min="1" aria-required="true" required>
             <button type="submit" id="submitButton" aria-label="submit button"><em class="fa-check fa-solid" aria-hidden="true"></em></button>
             <button type="button" id="cancelButton" aria-label="cancel button" onclick="closeSettings()"><em class="fa-times fa-solid" aria-hidden="true"></em></button>
           </form>
-        </form>        
+        </div>        
     </section>
     </div>
 
